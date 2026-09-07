@@ -47,13 +47,13 @@ export class Alumno {
     // -------------------------------------------------------------------
 
     getNombreCompleto(): string {
-        // TODO
-        throw new Error("Implementar");
+        return `${this.nombre} ${this.apellido}`;
+        
     }
 
     esMayorDeEdad(): boolean {
-        // TODO
-        throw new Error("Implementar");
+        return this.edad >= 18;
+        
     }
 
     // -------------------------------------------------------------------
