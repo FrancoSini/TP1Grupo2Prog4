@@ -38,7 +38,7 @@ export class Rectangulo extends Figura {
 
     calcularArea(): number {
         // TODO: área = base * altura
-        throw new Error("Implementar");
+        return this.base * this.altura;
     }
 
     calcularPerimetro(): number {
