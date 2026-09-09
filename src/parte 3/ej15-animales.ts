@@ -16,31 +16,29 @@ export abstract class Animal {
 export class Perro extends Animal {
     hacerSonido(): string {
         // TODO: devolver "Guau"
-        return "Guau";
+        throw new Error("Implementar");
     }
-        
 }
 
 export class Gato extends Animal {
     hacerSonido(): string {
         // TODO: devolver "Miau"
-        return "Miau";
-        
+        throw new Error("Implementar");
     }
 }
 
 export class Vaca extends Animal {
     hacerSonido(): string {
         // TODO: devolver "Muu"
-        return "Muu";
+        throw new Error("Implementar");
     }
 }
 
 export class Pajaro extends Animal {
     hacerSonido(): string {
         // TODO: devolver "Pío"
-        return "Pío";
-     }
+        throw new Error("Implementar");
+    }
 }
 
 /**
@@ -49,8 +47,5 @@ export class Pajaro extends Animal {
  */
 export function hacerSonidos(animales: Animal[]): void {
     // TODO
-    for (const animal of animales) {
-        console.log(`${animal.nombre}: ${animal.hacerSonido()}`);
-    }
-    
+    throw new Error("Implementar");
 }
