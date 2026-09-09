@@ -234,7 +234,7 @@ export function buscar<T>(
     callback: (elemento: T) => boolean
 ): T | undefined {
     // TODO
-    throw new Error("Implementar");
+    return elementos.find(elemento => callback(elemento));
 }
 
 // -----------------------------------------------------------------------------
@@ -251,7 +251,9 @@ export function calcularTotal(
     callback: (alumno: Alumno) => number
 ): number {
     // TODO
-    throw new Error("Implementar");
+    return alumnos.reduce((acc, alumno) => acc + callback(alumno), 0);
+
+    
 }
 
 // -----------------------------------------------------------------------------
@@ -273,8 +275,16 @@ export function agruparPorCiudad(
     alumnos: Alumno[]
 ): Record<string, Alumno[]> {
     // TODO
-    throw new Error("Implementar");
-}
+    return alumnos.reduce((acc, alumno) => {
+        if (!acc[alumno.ciudad]) {
+            acc[alumno.ciudad] = [];
+        }
+        acc[alumno.ciudad]!.push(alumno);
+        return acc;
+    }, {} as Record<string, Alumno[]>);
+
+}    
+    
 
 // -----------------------------------------------------------------------------
 // EJERCICIO 20 - Estadísticas generales
@@ -300,7 +310,29 @@ export function obtenerEstadisticas(
     alumnos: Alumno[]
 ): Estadisticas {
     // TODO
-    throw new Error("Implementar");
+    if (alumnos.length === 0) {
+        return {
+            cantidadTotal: 0,
+            cantidadAprobados: 0,
+            cantidadDesaprobados: 0,
+            promedio: 0,
+            mejorAlumno: undefined
+        };
+    }
+    const cantidadTotal = alumnos.length;
+    const cantidadAprobados = obtenerAprobados(alumnos).length;
+    const cantidadDesaprobados = cantidadTotal - cantidadAprobados;
+    const promedio = calcularPromedio(alumnos);
+    const mejorAlumno = obtenerMejorAlumno(alumnos);
+
+    return {
+        cantidadTotal,
+        cantidadAprobados,
+        cantidadDesaprobados,
+        promedio,
+        mejorAlumno
+    };
+
 }
 
 // -----------------------------------------------------------------------------
@@ -308,18 +340,18 @@ export function obtenerEstadisticas(
 // -----------------------------------------------------------------------------
 // Descomentar estas líneas cuando se hayan implementado las funciones.
 //
-// console.log(obtenerNombres(alumnos).slice(0, 10));
-// console.log(obtenerNombresCompletos(alumnos).slice(0, 10));
-// console.log(obtenerMayoresDeEdad(alumnos).length);
-// console.log(obtenerAprobados(alumnos).length);
-// console.log(calcularPromedio(alumnos));
-// console.log(obtenerMejorAlumno(alumnos));
-// console.log(buscarPorLegajo(alumnos, 500));
-// console.log(existeDesaprobado(alumnos));
-// console.log(todosAprobaron(alumnos));
-// console.log(cantidadAprobados(alumnos));
-// console.log(sumarEdades(alumnos));
-// console.log(obtenerAlumnosDeCiudad(alumnos, "Bahía Blanca").length);
-// console.log(calcularPromedioPorCiudad(alumnos, "Bahía Blanca"));
-// console.log(agruparPorCiudad(alumnos));
-// console.log(obtenerEstadisticas(alumnos));
+console.log(obtenerNombres(alumnos).slice(0, 10));
+console.log(obtenerNombresCompletos(alumnos).slice(0, 10));
+console.log(obtenerMayoresDeEdad(alumnos).length);
+console.log(obtenerAprobados(alumnos).length);
+console.log(calcularPromedio(alumnos));
+console.log(obtenerMejorAlumno(alumnos));
+console.log(buscarPorLegajo(alumnos, 500));
+console.log(existeDesaprobado(alumnos));
+console.log(todosAprobaron(alumnos));
+console.log(cantidadAprobados(alumnos));
+console.log(sumarEdades(alumnos));
+console.log(obtenerAlumnosDeCiudad(alumnos, "Bahía Blanca").length);
+console.log(calcularPromedioPorCiudad(alumnos, "Bahía Blanca"));
+console.log(agruparPorCiudad(alumnos));
+console.log(obtenerEstadisticas(alumnos));
