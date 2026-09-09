@@ -28,7 +28,7 @@ export class EmpleadoFijo extends Empleado {
 
     calcularSueldo(): number {
         // TODO: cobra el sueldo mensual, sin más cálculo.
-        return this.sueldoMensual;
+        throw new Error("Implementar");
     }
 }
 
@@ -45,7 +45,7 @@ export class EmpleadoPorHora extends Empleado {
 
     calcularSueldo(): number {
         // TODO: sueldo = horas * valorHora
-        return this.horas * this.valorHora;
+        throw new Error("Implementar");
     }
 }
 
@@ -62,7 +62,7 @@ export class EmpleadoComision extends Empleado {
 
     calcularSueldo(): number {
         // TODO: sueldo = ventas * (porcentajeComision / 100)
-        return this.ventas * (this.porcentajeComision / 100);
+        throw new Error("Implementar");
     }
 }
 
@@ -72,5 +72,5 @@ export class EmpleadoComision extends Empleado {
  */
 export function calcularSueldos(empleados: Empleado[]): number {
     // TODO
-    return empleados.reduce((total, empleado) => total + empleado.calcularSueldo(), 0);
+    throw new Error("Implementar");
 }
