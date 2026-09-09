@@ -355,4 +355,4 @@ console.log(obtenerAlumnosDeCiudad(alumnos, "Bahía Blanca").length);
 console.log(calcularPromedioPorCiudad(alumnos, "Bahía Blanca"));
 console.log(agruparPorCiudad(alumnos));
 console.log(obtenerEstadisticas(alumnos));
-//Terminado
+
