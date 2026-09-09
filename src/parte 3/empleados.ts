@@ -25,7 +25,8 @@ export class EmpleadoTiempoCompleto extends Empleado {
     }
 
     calcularSueldo(): number {
-        return this.sueldoBasico;
+        // TODO: cobra el sueldo básico, sin más cálculo.
+        throw new Error("Implementar");
     }
 }
 
@@ -41,7 +42,8 @@ export class EmpleadoMedioTiempo extends Empleado {
     }
 
     calcularSueldo(): number {
-        return this.horasTrabajadas * this.valorHora;
+        // TODO: sueldo = horasTrabajadas * valorHora
+        throw new Error("Implementar");
     }
 }
 
@@ -57,8 +59,7 @@ export class EmpleadoPorComision extends Empleado {
     }
 
     calcularSueldo(): number {
-        // TODO
-        return this.ventasTotales * (this.porcentajeComision / 100);
-        
+        // TODO: sueldo = ventasTotales * (porcentajeComision / 100)
+        throw new Error("Implementar");
     }
 }

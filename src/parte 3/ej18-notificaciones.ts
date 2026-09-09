@@ -12,23 +12,21 @@ export class NotificacionEmail extends Notificacion {
     enviar(mensaje: string): void {
         // TODO: informar por consola (console.log) que se envía un email
         // con ese mensaje (mencionar "email").
-        console.log(`Se envió un email con el mensaje: "${mensaje}"`);
-
-        
+        throw new Error("Implementar");
     }
 }
 
 export class NotificacionSMS extends Notificacion {
     enviar(mensaje: string): void {
         // TODO: idem, mencionando "SMS"
-        console.log(`Se envió un SMS con el mensaje: "${mensaje}"`);
+        throw new Error("Implementar");
     }
 }
 
 export class NotificacionPush extends Notificacion {
     enviar(mensaje: string): void {
         // TODO: idem, mencionando "push"
-        console.log(`Se envió una notificación push con el mensaje: "${mensaje}"`);
+        throw new Error("Implementar");
     }
 }
 
@@ -37,5 +35,5 @@ export function enviarNotificaciones(
     mensaje: string
 ): void {
     // TODO: enviar el mensaje a través de cada notificación recibida.
-    notificaciones.forEach(notificacion => notificacion.enviar(mensaje));
+    throw new Error("Implementar");
 }
